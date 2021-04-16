@@ -1,0 +1,133 @@
+body{
+  margin:0;
+}
+a {
+  color:black;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover, a:active{
+  text-decoration: underline;
+  transition: opacity 0.25s ease-out;
+	-webkit-transition: opacity 0.25s ease-out;
+  opacity: 0.7;
+}
+h1 {
+  font-size:45px;
+  text-align: center;
+  border-bottom:1px solid gray;
+  margin:0;
+  padding:20px;
+}
+table {
+  border-collapse: collapse;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#wrap{
+  display: grid;
+  grid-template-rows: 65px 1fr;
+}
+#menu ol{
+  border-bottom:1px solid gray;
+  text-align: center;
+  background-color: black;
+  margin:0;
+  padding:20px 20px 20px 33px;
+}
+#menu li{
+  display:inline;
+  padding: 30px;
+}
+#menu li a{
+  color: white;
+}
+#table{
+  width: 400px;
+  font-size: 17px;
+  margin: auto /* 자동가운데정렬 */ ;
+  padding:20px;
+  text-align: center;
+  background-color: lightgray;
+}
+#wrap #contents{
+  text-align: center;
+  padding-bottom:33px;
+}
+#recipe {
+  width: 300px;
+  margin: auto;
+}
+#recipe p {
+  border-top: 2px dashed;
+  border-color: gray !important /* 우선도를 최고로 하고 싶을때 */;
+  margin:0; padding: 30px;
+  counter-increment: section;
+  position: relative;
+}
+#recipe p:nth-child(even):before {
+  content: counter(section);
+  right: 100%;
+  margin-right: -20px;
+  position: absolute;
+  border-radius: 50%;
+  padding: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: gray;
+  text-align:center;
+  color: white;
+  font-size: 110%;
+}
+#recipe p:nth-child(odd):before {
+  content: counter(section);
+  left: 100%;
+  margin-left: -20px;
+  position: absolute;
+  border-radius: 50%;
+  padding: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: gray;
+  text-align:center;
+  color: white;
+  font-size: 110%;
+}
+#recipe p:nth-child(even) {
+  border-left: 2px dashed;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-right: 30px;
+  padding-right: 0;
+}
+#recipe p:nth-child(odd) {
+  border-right: 2px dashed;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-left: 30px;
+  padding-left: 0;
+}
+#recipe p:first-child {
+  border-top: 0;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+}
+#recipe p:last-child {
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+}
+@media(max-width:800px){
+  #wrap{
+  display: block;
+  }
+}
